@@ -39,12 +39,17 @@ rag-chat "What is the monthly stipend for remote work?"
 Based on Employee Handbook 2026.pdf (Section 4.2 - Remote Work Policy):
 "Employees are eligible for full remote work after completing their 90-day probationary period. The company provides a monthly 75 EUR home office and high-speed internet stipend."
 
-Confidence Score: 82%
+Confidence Score: 100%
 Cited Sources:
   * Employee Handbook 2026.pdf (Section 4.2 - Remote Work Policy)
+
 ========================================================================
 ```
 
 ## License
 
 MIT
+
+## Scope / Status
+
+This repository is a **working demo on deterministic sample data** (runs offline, covered by automated tests). Retrieval is token-overlap scoring over sample documents (no embeddings or vector store yet). Entries in `.env.example` are placeholders for those future connectors.

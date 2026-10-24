@@ -3,9 +3,17 @@ import re
 
 from rag_chat.models import DocumentChunk, RAGAnswer, RetrievedPassage
 
+STOPWORDS = frozenset(
+    {
+        "the", "and", "for", "what", "are", "with", "that", "this", "from", "have",
+        "has", "must", "how", "does", "can", "you", "your", "our", "all", "any",
+        "per", "within", "after", "which",
+    }
+)
+
 
 def tokenize(text: str) -> set[str]:
-    return set(re.findall(r"\b\w{3,}\b", text.lower()))
+    return set(re.findall(r"\b\w{3,}\b", text.lower())) - STOPWORDS
 
 
 def compute_bm25_similarity(query_tokens: set[str], doc_tokens: set[str]) -> float:
